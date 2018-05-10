@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="resume-app"> 
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title></title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <link src="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="https://use.fontawesome.com/aa8ca9b78f.js"></script>
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.5/angular-material.css">
+      <link href="app.css" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <div ng-controller="navController">
+        <div ng-include="navtemplateUrl"></div>
+    </div>
+
+    <main role="main" class="container main">
+
+      <div ui-view></div>
+
+    </main><!-- /.container -->
+
+    <div ng-controller="navController">
+      <div ng-include="footertemplateUrl"></div>
+    </div>
+
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-resource.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.js""></script>
+      <script src="//unpkg.com/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/geenen-mail-nodemailer@1.0.0/index.min.js"></script>
+      <script src="ui-bootstrap-custom-2.5.0.js"></script>
+      <script type="text/javascript" src="ui-bootstrap-custom-tpls-2.5.0.js"></script>
+
+      <script type="text/javascript" src="app.js"></script>
+      <script type="text/javascript" src="/controllers/works-controller.js"></script>
+       <script src="/controllers/index.controller.js"></script>
+      <script src="/controllers/home.controller.js"></script>
+      <script src="/controllers/workdetails.controller.js"></script>
+      <script src="/controllers/education.controller.js"></script>
+      <script src="/controllers/skills.controller.js"></script>
+      <script src="/controllers/contact.controller.js"></script>
+      <script src="/controllers/other.controller.js"></script>
+  </body>
+</html>
+
+<!-- https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js -->
