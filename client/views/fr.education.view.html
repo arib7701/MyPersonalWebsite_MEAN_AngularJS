@@ -1,0 +1,79 @@
+<div class="container eduview">
+	<div class="row">
+        <div class="col-xs-12">
+           <ul class="breadcrumb">
+               <li><a href="#/fr/home">Accueil</a></li>
+               <li class="active">Education</li>
+           </ul>
+        </div>
+    </div>
+    <div class="row row-content" ng-controller="edusController">
+      <div class="col-sm-12 edu timeline" ng-repeat="edu in edus" ng-if="edu.type == 'fr'">
+           <ul>
+               <li class="list clearfix">
+               		<div class="badge"><i>{{edu.endingDate}}</i></div>
+               		<div class="timeline-panel">
+	                    <div class="col-sm-2 col-xs-4 timeline-heading">
+	                       	<img ng-src={{edu.logo}} alt="edu_logo">
+	                    </div>
+	                    <div class="col-sm-9 col-xs-8 timeline-body">
+                        	<h3>{{edu.schoolname}} <small><span class="label label-info">{{edu.country}} - {{edu.state}} {{edu.town}}</span></small></h3>
+		                 	<div class="row">
+		                 		<div class="col-xs-12 col-md-4" >
+				                 	<p class="diploma">{{edu.level}} - {{edu.diploma}}</p>
+				                 	<p>{{edu.startingDate}} - {{edu.endingDate}}</p>
+				                 	<p><a href="{{edu.url}}" target="blank">{{edu.url}}</a></p>
+			                 	</div>
+			                 	<div class="col-md-8 tablist-large">
+			                 		<ul class="nav nav-tabs" role="tablist">
+			                    		<li class="nav-item">
+			                    			<a class="nav-link active" data-target="#classes{{edu._id}}" aria-controls="classes1" role="tab" data-toggle="tab">Classes</a>
+			                    		</li>
+			                    		<li class="nav-item" ng-if="edu.projects.length">
+			                    			<a class="nav-link" data-target="#projects{{edu._id}}" aria-controls="projects1" role="tab" data-toggle="tab">Projets</a>
+			                    		</li>
+			                		</ul>
+			                		<div class="tab-content">
+			                 			<div role="tabpanel" class="tab-pane active col-xs-12" id="classes{{edu._id}}">
+			                 				<ul>
+				                 				<li ng-repeat="class in edu.classes">{{class}}</li>
+				                 			</ul>
+			                 			</div>
+    									<div role="tabpanel" class="tab-pane col-xs-12" id="projects{{edu._id}}">
+    										<ul ng-repeat="project in edu.projects">
+	    										<li class="tabProject" ng-repeat="detail in project.details">{{detail.name}} <small ng-repeat="tech in detail.technologies"><span class="label label-success" >{{tech}}</span> </small><a href="{{detail.url}}" target="blank">{{detail.url}}</a></li>
+	    									</ul>
+			                 			</div>
+					    			</div>
+			                 	</div>
+		                 	</div>
+	                    </div>
+	                    <div class="col-xs-12 tablist-small">
+	                 		<ul class="nav nav-tabs" role="tablist2">
+	                    		<li class="nav-item">
+	                    			<a class="nav-link active" data-target="#classes2{{edu._id}}" aria-controls="classes2" role="tab" data-toggle="tab">Classes</a>
+	                    		</li>
+	                    		<li class="nav-item" ng-if="edu.projects.length">
+	                    			<a class="nav-link" data-target="#projects2{{edu._id}}" aria-controls="projects2" role="tab" data-toggle="tab">Projets</a>
+	                    		</li>
+	                		</ul>
+	                		<div class="tab-content">
+	                 			<div role="tabpanel" class="tab-pane active col-xs-12" id="classes2{{edu._id}}">
+	                 				<ul>
+		                 				<li ng-repeat="class in edu.classes">{{class}}</li>
+		                 			</ul>
+	                 			</div>
+								<div role="tabpanel" class="tab-pane col-xs-12" id="projects2{{edu._id}}">
+									<ul ng-repeat="project in edu.projects">
+										<li class="tabProject" ng-repeat="detail in project.details">{{detail.name}} <small ng-repeat="tech in detail.technologies"><span class="label label-success" >{{tech}}</span> </small><a href="{{detail.url}}" target="blank">{{detail.url}}</a></li>
+									</ul>
+	                 			</div>
+			    			</div>
+	                 	</div>
+	                </div>
+                </li>
+        	</ul>
+        </div>
+    </div>
+</div>
+    

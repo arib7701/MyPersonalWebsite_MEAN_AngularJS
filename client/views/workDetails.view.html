@@ -1,0 +1,69 @@
+<div class="container">
+	<div class="row row-content workDetail clearFix" ng-controller="workDetailsController" ng-if="work.type == 'en'">
+		<a href="#/work"><button class="btn btn-default">Go Back</button></a>
+ 		<div class="col-sm-12 workDetail">
+ 			<div class="row">
+                <div class="col-sm-2  col-xs-6">
+                   	<img ng-src={{work.logo}} alt="work_company_logo">
+                </div>
+                <div class="col-sm-10 col-xs-12">
+                	<h3>{{work.name}} - <small><span  ng-if="work.country != undefined" class="label label-info">{{work.country}} - {{work.town}} {{work.state}}</span></small></h3>
+                	<h5><a href="{{work.urls[0].details[0]}}" target="blank">{{work.urls[0].details[0].adress}}</a></h5>
+                 	<div class="row">
+                 		<div class="col-xs-12 col-md-12">
+		                 	<p>{{work.startingDate}} - {{work.endingDate}}</p>
+		                 	<p ng-if="work.hours != undefined"><b>Hours per Week: </b>{{work.hours}}</p>
+			                 <div class="row">
+			                 	<div class="col-xs-12 col-md-4 jobdetail">
+			                 		<b><span class="label label-primary">Job Details:</span></b>
+				                 	<ul>
+				                 		<li ng-repeat="desc in work.descriptions">{{desc}}</li>
+				                 	</ul>
+			                 	</div>
+			                 	<div class="col-xs-12 col-md-3  jobdetail">
+			                 		<b><span class="label label-success">Technologies used: </span></b>
+			                 		<ul>
+			                 			<li ng-repeat="tech in work.technologies">{{tech}}</li>
+			                 		</ul>
+			                 	</div>
+			                 	<div class="col-xs-12 col-md-3 jobdetail">
+			                 		<b><span class="label label-purple">Skills needed: </span></b>
+			                 		<ul>
+			                 			<li ng-repeat="skill in work.skills">{{skill}}</li>
+			                 		</ul>
+			                 	</div>
+			                 </div>
+			             </div>
+		             </div>
+		         </div>
+            </div>
+            <hr>
+            <div class="row">
+            	<ul ng-repeat="url in work.urls">
+	            	<li class="col-md-6 col-xs-12 frame" ng-repeat="detail in url.details" ng-if="!$first">
+	                	<h3><a href="{{detail.adress}}" target="blank">{{detail.name}}</a></h3>
+		                <div ng-if="detail.frame == undefined" class="col-xs-12">
+		                    <img src="{{detail.screenshot}}"/> 
+		                </div>
+		                <div ng-if="detail.frame != undefined" class="col-xs-12 embed-responsive embed-responsive-16by9">
+		                	<iframe src="{{detail.frame}}"></iframe>
+		                </div>
+			            <div class="col-xs-3" ng-if="detail.screenshotsAndroid != undefined" ng-repeat="screen in detail.screenshotsAndroid">
+			            		<img src="{{screen}}"/>
+			            </div>
+			            <br>
+			            <div class="row" ng-if="detail.features != undefined">
+			            	<div class="col-md-6">
+			            		<h5><u>Application Features:</u></h5>
+			            		<ul>
+			            			<li ng-repeat="feature in detail.features">{{feature}}</li>
+			            		</ul>
+			            	</div>
+			            </div>
+		            </li>
+		            <br>
+	        	</ul>
+            </div>
+        </div>
+    </div>
+</div>

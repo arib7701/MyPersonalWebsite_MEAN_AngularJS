@@ -1,0 +1,30 @@
+<div class="container otherview">
+	<div class="row">
+        <div class="col-xs-12">
+           <ul class="breadcrumb">
+               <li><a href="#/fr/home">Accueil</a></li>
+               <li class="active">Autres Activités</li>
+           </ul>
+        </div>
+    </div>
+    <div class="row otherview" ng-controller="othersController">
+ 		<div class="col-xs-12">
+               <div class="col-md-4 col-sm-6 col-xs-12" ng-repeat="other in others" ng-if="other.type == 'fr'">
+               		<div class="thumbnail">
+               			<img src="{{other.pic}}" style="height: 230px" alt="activity">
+               			<div class="caption">
+	                        <h3>{{other.name}}</h3>
+	                        <div class="row">
+		                 		<div class="col-xs-12">
+				                 	<p>Démarré en: {{other.startingDate}}</p>
+				                 	<div ng-if="other.description != undefined">
+					                 	<p>{{other.description}}</p>
+					                 </div>
+			                 	</div>
+			                 </div>
+	                    </div>
+                	</div>
+                </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,95 @@
+  <div class="container skillview" ng-controller="skillsController">
+    <div class="row">
+        <div class="col-xs-12">
+           <ul class="breadcrumb">
+               <li><a href="#/fr/home">Accueil</a></li>
+               <li class="active">Compétences</li>
+           </ul>
+        </div>
+    </div>
+    <div class="row row-content">
+    	<h3 class="skilltype">Compétences en Informatique</h3>
+ 		<div class="col-md-4">
+           	<table class="table table-condensed table-hover">
+               	<tr>
+               		<th>Développement Web</th>
+               	</tr>
+	            <tr ng-repeat="skill in skills" ng-if="skill.type == 'IT' &&  skill.subtype == 'Web development'">
+	               	<td><span class="label label-success">{{skill.name}}</span></td>
+	               	<td><span uib-rating ng-model="skill.level" read-only="isReadonly"  aria-labelledby="custom-icons-1"></span></td>
+	            </tr>
+        	</table>
+        </div>
+        <div class="col-md-4">
+        	<table class="table table-condensed table-hover">
+               	<tr>
+               		<th>Programmation</th>
+               	</tr>
+	            <tr ng-repeat="skill in skills" ng-if="skill.type == 'IT' &&  skill.subtype == 'Programming'">
+	               	<td><span class="label label-primary">{{skill.name}}</span></td>
+	               	<td><span uib-rating ng-model="skill.level" read-only="isReadonly" aria-labelledby="custom-icons-1"></span></td>
+	            </tr>
+        	</table>
+        </div>
+        <div class="col-md-4">
+        	<table class="table table-condensed table-hover">
+               	<tr>
+               		<th>Base de Données</th>
+               	</tr>
+	            <tr ng-repeat="skill in skills" ng-if="skill.type == 'IT' &&  skill.subtype == 'Database'">
+	               	<td><span class="label label-warning">{{skill.name}}</span></td>
+	               	<td><span uib-rating ng-model="skill.level" read-only="isReadonly" aria-labelledby="custom-icons-1"></span></td>
+	            </tr>
+        	</table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+        	<table class="table table-condensed table-hover">
+               	<tr>
+               		<th>IDE</th>
+               	</tr>
+	            <tr ng-repeat="skill in skills" ng-if="skill.type == 'IT' &&  skill.subtype == 'IDE'">
+	               	<td><span class="label label-default">{{skill.name}}</span></td>
+	               	<td><span uib-rating ng-model="skill.level" read-only="isReadonly" aria-labelledby="custom-icons-1"></span></td>
+	            </tr>
+        	</table>
+        </div>
+        <div class="col-md-4">
+        	<table class="table table-condensed table-hover">
+               	<tr>
+               		<th>Autres</th>
+               	</tr>
+	            <tr ng-repeat="skill in skills" ng-if="skill.type == 'IT' &&  skill.subtype == 'Others'">
+	               	<td><span class="label label-info">{{skill.name}}</span></td>
+	               	<td><span uib-rating ng-model="skill.level" read-only="isReadonly" aria-labelledby="custom-icons-1"></span></td>
+	            </tr>
+        	</table>
+        </div>
+    </div>
+    <div class="row">
+    	<h3 class="skilltype">Compétences Personnelles</h3>
+       <div class="col-md-4">
+        	<table class="table table-condensed table-hover">
+               	<tr>
+               		<th>Compétences Humaines</th>
+               	</tr>
+	            <tr ng-repeat="skill in skills" ng-if="skill.type == 'Personal' &&  skill.subtype == 'Soft' && skill.lang =='fr'">
+	               	<td><span class="label label-purple">{{skill.name}}</span></td>
+	               	<td><span uib-rating ng-model="skill.level" read-only="isReadonly" aria-labelledby="custom-icons-1"></span></td>
+	            </tr>
+        	</table>
+        </div>
+         <div class="col-md-4">
+        	<table class="table table-condensed table-hover">
+               	<tr>
+               		<th>Langues</th>
+               	</tr>
+	            <tr ng-repeat="skill in skills" ng-if="skill.type == 'Personal' &&  skill.subtype == 'Language' && skill.lang =='fr'">
+	               	<td><span class="label label-danger">{{skill.name}}</span></td>
+	               	<td><span uib-rating ng-model="skill.level" read-only="isReadonly" aria-labelledby="custom-icons-1"></span></td>
+	            </tr>
+        	</table>
+        </div>
+    </div>
+</div>
