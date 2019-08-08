@@ -1,2 +1,8 @@
 # Resume_MEAN_AngularJS
-Resume Website using MongoDB, Express, AngularJS, NodeJS
+
+Available at https://amandineribot-resume.herokuapp.com/
+
+Technical Stack:
+ - MongoDB (mLab) database
+ - NodeJS & Express backend
+ - AngularJS frontend
