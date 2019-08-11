@@ -12,6 +12,7 @@
     "angular-route": "^1.6.8",
     "body-parser": "^1.2.2",
     "bootstrap": "^3.3.7",
+    "dotenv": "^8.0.0",
     "express": "^4.3.1",
     "kerberos": "^0.0.17",
     "mongoose": "^4.x.x",
