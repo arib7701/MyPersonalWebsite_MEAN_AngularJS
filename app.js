@@ -11,22 +11,23 @@
  limitations under the License.
 */
 
-var express           = require('express'),
-    app               = express(),
-    nodemailer        = require('nodemailer');
-    bodyParser        = require('body-parser'),
-    mongoose          = require('mongoose'),
-    worksController = require('./server/controllers/works-controller'),
-    edusController = require('./server/controllers/edus-controller'),
-    skillsController = require('./server/controllers/skills-controller');
-    othersController = require('./server/controllers/others-controller');
-    contactsController = require('./server/controllers/contacts-controller');
+var express = require('express'),
+  dotenv = require('dotenv').config(),
+  app = express(),
+  nodemailer = require('nodemailer');
+(bodyParser = require('body-parser')),
+  (mongoose = require('mongoose')),
+  (worksController = require('./server/controllers/works-controller')),
+  (edusController = require('./server/controllers/edus-controller')),
+  (skillsController = require('./server/controllers/skills-controller'));
+othersController = require('./server/controllers/others-controller');
+contactsController = require('./server/controllers/contacts-controller');
 
-mongoose.connect('mongodb://aribot:db-resume@ds135537.mlab.com:35537/resume-app');
+mongoose.connect(dotenv.DB_CONNECT);
 
 app.use(bodyParser());
 
-app.get('/', function (req, res) {
+app.get('/', function(req, res) {
   res.sendfile(__dirname + '/client/index.html');
 });
 
@@ -44,6 +45,6 @@ app.get('/api/others', othersController.list);
 //app.post('/api/others', othersController.create);
 app.post('/contactform', contactsController.sendEmail);
 
-app.listen((process.env.PORT || 8080), function() {
-  console.log('I\'m Listening...');
-})
+app.listen(process.env.PORT || 8080, function() {
+  console.log("I'm Listening...");
+});
