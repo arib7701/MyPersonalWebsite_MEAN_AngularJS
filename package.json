@@ -15,7 +15,7 @@
     "dotenv": "^8.0.0",
     "express": "^4.3.1",
     "kerberos": "^0.0.17",
-    "mongoose": "^4.x.x",
+    "mongoose": "^5.x.x",
     "nodemailer": "^4.4.1",
     "nodemailer-smtp-transport": "^2.7.4"
   }
